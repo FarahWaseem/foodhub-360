@@ -12,11 +12,6 @@ import java.util.stream.* ;
 import java.util.List;
 import java.util.ArrayList;
 
-
-
-
-
-
 public class CustomerResponse  {
     private String customerId;
     private String name;

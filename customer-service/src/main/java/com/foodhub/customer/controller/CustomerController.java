@@ -1,4 +1,4 @@
-package main.java.com.foodhub.customer.controller;
+package com.foodhub.customer.controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.HttpStatus;
@@ -9,16 +9,15 @@ import java.time.LocalDateTime;
 import java.time.ZoneOffset;
 import java.time.format.DateTimeFormatter;
 import java.util.* ;
-
-import main.java.com.foodhub.customer.service.CustomerService;
-import main.java.com.foodhub.customer.dto.CustomerCreateRequest;
-import main.java.com.foodhub.customer.dto.CustomerResponse;
-import main.java.com.foodhub.customer.dto.AddressRequest;
-import main.java.com.foodhub.customer.entity.AddressType;
-import main.java.com.foodhub.customer.entity.MembershipLevel;
-import main.java.com.foodhub.customer.entity.CustomerAddress;
-import main.java.com.foodhub.customer.entity.Customer;
-
+import com.foodhub.customer.service.CustomerService;
+import com.foodhub.customer.dto.CustomerCreateRequest;
+import com.foodhub.customer.dto.CustomerResponse;
+import com.foodhub.customer.dto.AddressRequest;
+import com.foodhub.customer.entity.AddressType;
+import com.foodhub.customer.entity.MembershipLevel;
+import com.foodhub.customer.entity.CustomerAddress;
+import com.foodhub.customer.exception.CustomerNotFoundException;
+import com.foodhub.customer.exception.EmailAlreadyExistsException;
 
 @RestController
 @RequestMapping("/api/customers")
