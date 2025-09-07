@@ -1,5 +1,9 @@
 package com.foodhub.order.dto;
 
+import com.foodhub.order.entity.Order;
+import com.foodhub.order.enums.OrderStatus;
+import com.foodhub.order.enums.PaymentMethod;
+
 import lombok.*;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;

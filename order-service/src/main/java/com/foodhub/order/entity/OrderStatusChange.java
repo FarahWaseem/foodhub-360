@@ -1,4 +1,5 @@
 package com.foodhub.order.entity;
+import com.foodhub.order.enums.OrderStatus;
 
 import lombok.*;
 import java.time.LocalDateTime;

@@ -1,7 +1,7 @@
 package com.foodhub.customer.dto;
 
 import lombok.*;
-import javax.validation.constraints.*;
+import jakarta.validation.constraints.*;
 import java.util.*;
 
 @Data
@@ -23,5 +23,6 @@ public class CustomerCreateRequest {
     @Size(min = 8, message = "Password must be at least 8 characters")
     private String password;
 
+    @Builder.Default
     private List<AddressRequest> addresses = new ArrayList<>();
 }

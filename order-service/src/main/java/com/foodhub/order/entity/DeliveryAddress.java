@@ -15,4 +15,10 @@ public class DeliveryAddress {
     private String postalCode;
 
     private String phone;
+
+    public DeliveryAddress(String street, String city, String phone) {
+        this.street = street;
+        this.city = city;
+        this.phone = phone;
+    }
 }

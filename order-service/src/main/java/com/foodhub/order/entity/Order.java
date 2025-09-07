@@ -1,5 +1,9 @@
 package com.foodhub.order.entity;
 
+import com.foodhub.order.enums.OrderStatus;
+import com.foodhub.order.enums.PaymentMethod;
+
+
 import lombok.*;
 import org.springframework.data.annotation.*;
 import org.springframework.data.mongodb.core.mapping.*;

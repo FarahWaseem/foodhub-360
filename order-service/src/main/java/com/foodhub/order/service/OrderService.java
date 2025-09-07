@@ -3,6 +3,7 @@ package com.foodhub.order.service;
 import com.foodhub.order.dto.*;
 import com.foodhub.order.entity.*;
 import com.foodhub.order.enums.OrderStatus;
+import com.foodhub.order.entity.OrderStatusChange; 
 import com.foodhub.order.exception.CustomerNotFoundException;
 import com.foodhub.order.exception.OrderNotFoundException;
 import com.foodhub.order.client.CustomerServiceClient;

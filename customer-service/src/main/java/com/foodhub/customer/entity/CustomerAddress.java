@@ -1,9 +1,7 @@
 package com.foodhub.customer.entity;
 
 import lombok.*;
-import javax.persistence.*;
-
-import org.hibernate.annotations.GenericGenerator;
+import jakarta.persistence.*;
 
 import com.foodhub.customer.enums.AddressType;
 

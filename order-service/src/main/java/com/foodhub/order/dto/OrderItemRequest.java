@@ -2,6 +2,7 @@ package com.foodhub.order.dto;
 
 import lombok.*;
 import javax.validation.constraints.*;
+import java.math.BigDecimal;
 
 @Data
 @NoArgsConstructor

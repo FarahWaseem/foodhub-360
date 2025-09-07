@@ -2,7 +2,7 @@ package com.foodhub.customer.dto;
 
 import lombok.*;
 import com.foodhub.customer.enums.AddressType;
-import javax.validation.constraints.*;
+import jakarta.validation.constraints.*;
 
 @Data
 @NoArgsConstructor

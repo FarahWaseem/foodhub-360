@@ -1,5 +1,7 @@
 package com.foodhub.order.dto;
 
+import com.foodhub.order.enums.PaymentMethod;
+
 import lombok.*;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
