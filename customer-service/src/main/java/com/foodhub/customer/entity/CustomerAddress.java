@@ -3,6 +3,10 @@ package com.foodhub.customer.entity;
 import lombok.*;
 import javax.persistence.*;
 
+import org.hibernate.annotations.GenericGenerator;
+
+import com.foodhub.customer.enums.AddressType;
+
 @Entity
 @Table(name = "customer_addresses")
 @Data
@@ -11,7 +15,7 @@ import javax.persistence.*;
 @Builder
 public class CustomerAddress {
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
+    @GeneratedValue(generator = "UUID")
     private String id;
 
     @ManyToOne(fetch = FetchType.LAZY)

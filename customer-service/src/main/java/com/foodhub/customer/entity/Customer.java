@@ -2,6 +2,9 @@ package com.foodhub.customer.entity;
 
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.GenericGenerator;
+
+import com.foodhub.customer.enums.MembershipLevel;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -15,8 +18,11 @@ import java.util.*;
 @Builder
 public class Customer {
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
+    @GeneratedValue(generator = "UUID")
+    @GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")
+
     private String customerId;
+    
 
     @Column(nullable = false)
     private String name;
@@ -39,6 +45,7 @@ public class Customer {
     private MembershipLevel membershipLevel = MembershipLevel.BRONZE;
 
     @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @Builder.Default
     private List<CustomerAddress> addresses = new ArrayList<>();
 
     public Customer(String name, String email, String phone, String passwordHash) {

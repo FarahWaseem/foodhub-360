@@ -1,0 +1,20 @@
+server:
+  port: 8083
+spring:
+  application:
+    name: order-service
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/order_db
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
+customer:
+  service:
+    url: http://customer-service
+
+logging:
+  level:
+    com.foodhub.order: DEBUG     
