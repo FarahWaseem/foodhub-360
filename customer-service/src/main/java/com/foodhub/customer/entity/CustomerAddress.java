@@ -31,6 +31,7 @@ public class CustomerAddress {
 
     private String postalCode;
 
+    @Builder.Default
     private Boolean isDefault = false;
 
     public CustomerAddress(Customer customer, AddressType type, String street, String city) {

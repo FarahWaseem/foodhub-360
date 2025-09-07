@@ -29,8 +29,10 @@ public class Order {
     @Field("branch_id")
     private String branchId;
 
+        @Builder.Default
     private List<OrderItem> items = new ArrayList<>();
 
+        @Builder.Default
     private OrderStatus status = OrderStatus.PENDING;
 
     @Field("delivery_address")
@@ -43,6 +45,7 @@ public class Order {
     private BigDecimal deliveryFee;
     private BigDecimal tax;
     private BigDecimal total;
+    @Builder.Default
     private String currency = "ILS";
 
     @Field("estimated_delivery_time")
@@ -56,6 +59,7 @@ public class Order {
     @Field("updated_at")
     private LocalDateTime updatedAt;
 
+    @Builder.Default
     private List<OrderStatusChange> timeline = new ArrayList<>();
 
     private String notes;
