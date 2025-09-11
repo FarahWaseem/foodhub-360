@@ -11,5 +11,6 @@ D:\Farah\Advanced Software Engineering\ch5\foodhub360\foodhub-360\customer-servi
 D:\Farah\Advanced Software Engineering\ch5\foodhub360\foodhub-360\customer-service\src\main\java\com\foodhub\customer\service\CustomerService.java
 D:\Farah\Advanced Software Engineering\ch5\foodhub360\foodhub-360\customer-service\src\main\java\com\foodhub\customer\dto\CustomerResponse.java
 D:\Farah\Advanced Software Engineering\ch5\foodhub360\foodhub-360\customer-service\src\main\java\com\foodhub\customer\exception\EmailAlreadyExistsException.java
+D:\Farah\Advanced Software Engineering\ch5\foodhub360\foodhub-360\customer-service\src\main\java\com\foodhub\customer\controller\config\SwaggerConfig.java
 D:\Farah\Advanced Software Engineering\ch5\foodhub360\foodhub-360\customer-service\src\main\java\com\foodhub\customer\dto\AddressResponse.java
 D:\Farah\Advanced Software Engineering\ch5\foodhub360\foodhub-360\customer-service\src\main\java\com\foodhub\customer\entity\CustomerAddress.java

@@ -17,4 +17,10 @@ customer:
 
 logging:
   level:
-    com.foodhub.order: DEBUG     
+    com.foodhub.order: DEBUG
+
+grpc:
+  client:
+    customer-service:
+      address: 'static://localhost:9090'
+      negotiationType: plaintext

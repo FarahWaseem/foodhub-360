@@ -1,0 +1,50 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.foodhub.customer.grpc";
+option java_outer_classname = "CustomerProto";
+
+package customer;
+
+service CustomerService {
+  rpc GetCustomer(GetCustomerRequest) returns (CustomerResponse);
+  rpc CreateCustomer(CreateCustomerRequest) returns (CustomerResponse);
+  rpc UpdateLoyaltyPoints(UpdateLoyaltyPointsRequest) returns (CustomerResponse);
+}
+
+message GetCustomerRequest {
+  string customer_id = 1;
+}
+
+message CreateCustomerRequest {
+  string name = 1;
+  string email = 2;
+  string phone = 3;
+  string password = 4;
+  repeated AddressProto addresses = 5;
+}
+
+message UpdateLoyaltyPointsRequest {
+  string customer_id = 1;
+  int32 points = 2;
+}
+
+message CustomerResponse {
+  string customer_id = 1;
+  string name = 2;
+  string email = 3;
+  string phone = 4;
+  string registration_date = 5;
+  int32 loyalty_points = 6;
+  string membership_level = 7;
+  repeated AddressProto addresses = 8;
+}
+
+message AddressProto {
+  string id = 1;
+  string type = 2;
+  string street = 3;
+  string city = 4;
+  string postal_code = 5;
+  bool is_default = 6;
+}

@@ -17,5 +17,6 @@ com\foodhub\customer\dto\AddressResponse$AddressResponseBuilder.class
 com\foodhub\customer\repository\CustomerRepository.class
 com\foodhub\customer\service\CustomerService.class
 com\foodhub\customer\controller\CustomerController.class
+com\foodhub\customer\controller\config\SwaggerConfig.class
 com\foodhub\customer\dto\CustomerCreateRequest$CustomerCreateRequestBuilder.class
 com\foodhub\customer\entity\CustomerAddress.class

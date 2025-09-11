@@ -1,0 +1,148 @@
+type Query {
+  customer(customerId: String!): Customer
+  customers: [Customer!]!
+  order(orderId: String!): Order
+  customerOrders(customerId: String!): [Order!]!
+}
+
+type Mutation {
+  createCustomer(input: CreateCustomerInput!): Customer!
+  createOrder(input: CreateOrderInput!): Order!
+  updateOrderStatus(orderId: String!, status: OrderStatus!, note: String): Order!
+}
+
+type Customer {
+  customerId: String!
+  name: String!
+  email: String!
+  phone: String!
+  registrationDate: String!
+  loyaltyPoints: Int!
+  membershipLevel: MembershipLevel!
+  addresses: [Address!]!
+  orders: [Order!]!
+}
+
+type Address {
+  id: String!
+  type: AddressType!
+  street: String!
+  city: String!
+  postalCode: String
+  isDefault: Boolean!
+}
+
+type Order {
+  orderId: String!
+  customerId: String!
+  restaurantId: String!
+  branchId: String!
+  items: [OrderItem!]!
+  status: OrderStatus!
+  deliveryAddress: DeliveryAddress!
+  paymentMethod: PaymentMethod!
+  subtotal: Float!
+  deliveryFee: Float!
+  tax: Float!
+  total: Float!
+  currency: String!
+  estimatedDeliveryTime: String
+  createdAt: String!
+  timeline: [OrderStatusChange!]!
+  notes: String
+  customer: Customer!
+}
+
+type OrderItem {
+  itemId: String!
+  name: String!
+  quantity: Int!
+  unitPrice: Float!
+  totalPrice: Float!
+  specialInstructions: String
+}
+
+type DeliveryAddress {
+  street: String!
+  city: String!
+  postalCode: String
+  phone: String!
+}
+
+type OrderStatusChange {
+  status: OrderStatus!
+  timestamp: String!
+  note: String!
+}
+
+input CreateCustomerInput {
+  name: String!
+  email: String!
+  phone: String!
+  password: String!
+  addresses: [AddressInput!]
+}
+
+input AddressInput {
+  type: AddressType!
+  street: String!
+  city: String!
+  postalCode: String
+}
+
+input CreateOrderInput {
+  customerId: String!
+  restaurantId: String!
+  branchId: String!
+  items: [OrderItemInput!]!
+  deliveryAddress: DeliveryAddressInput!
+  paymentMethod: PaymentMethod!
+  notes: String
+}
+
+input OrderItemInput {
+  itemId: String!
+  name: String!
+  quantity: Int!
+  unitPrice: Float!
+  specialInstructions: String
+}
+
+input DeliveryAddressInput {
+  street: String!
+  city: String!
+  phone: String!
+  postalCode: String
+}
+
+enum MembershipLevel {
+  BRONZE
+  SILVER
+  GOLD
+  PLATINUM
+}
+
+enum AddressType {
+  HOME
+  WORK
+  OTHER
+}
+
+enum OrderStatus {
+  PENDING
+  CONFIRMED
+  PAYMENT_PROCESSING
+  PAYMENT_CONFIRMED
+  IN_PREPARATION
+  READY_FOR_DELIVERY
+  OUT_FOR_DELIVERY
+  DELIVERED
+  CANCELLED
+}
+
+enum PaymentMethod {
+  CREDIT_CARD
+  DIGITAL_WALLET
+  CASH_ON_DELIVERY
+}
+
